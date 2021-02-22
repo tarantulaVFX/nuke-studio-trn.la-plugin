@@ -9,8 +9,9 @@ Copy __*"trnla/"*__ and __*"trnla_init.py"*__ into your .nuke/Python/Startup fol
 
 ## Features
 - Login to trn.la
-- Export and upload sequences as shots to trn.la
 - Select an existing project or create a new project on export.
+- Export and upload sequences as shots to trn.la
+
 &nbsp;  
 &nbsp;  
 &nbsp;  
