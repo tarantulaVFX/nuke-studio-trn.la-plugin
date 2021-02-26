@@ -1,9 +1,9 @@
 # --------------------------Trn.la Plugin For Nuke Studio--------------------------------
 # Register Trnla Custom Processors and Tasks
 #
+# (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
-# --------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 import hiero.core
 from trnla import (TrnlaShotProcessor, TrnlaShotProcessorUI, TrnlaShotProcessorPreset,
