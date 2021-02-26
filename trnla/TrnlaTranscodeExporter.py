@@ -1,10 +1,10 @@
 # --------------------------Trn.la Plugin For Nuke Studio--------------------------------
 # Subclass of TranscodeExporter that handles exporting full quality media and uploading
 # the shot to trn.la.
-#
+# 
+# (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
-# --------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 import os
 import json

@@ -1,11 +1,10 @@
 # --------------------------Trn.la Plugin For Nuke Studio--------------------------------
 # Subclass of ShotProcessor that can export shots from NukeStudio sequences and upload
 # to trn.la.
-#
+# 
+# (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
-# --------------------------------------------------------------------------------------
-
+# ---------------------------------------------------------------------------------------
 import os
 import json
 import os.path as path
@@ -537,8 +536,7 @@ class TrnlaShotProcessor(FnShotProcessor.ShotProcessor):
                 self.trnlaPreview = preview
                 self.create_project()
             elif self.preset().properties()["trnla_exist_project"]:
-                # self.TrnlaStartProcessing(exportItems, preview)
-                pass
+                self.TrnlaStartProcessing(exportItems, preview)
 
 
 class TrnlaShotProcessorPreset(hiero.core.ProcessorPreset):
@@ -593,34 +591,19 @@ class TrnlaShotProcessorPreset(hiero.core.ProcessorPreset):
         Create resolve entries for default resolve tokens shared by all task types.
         @param resolver : ResolveTable object"""
 
-        resolver.addResolver("{filename}", "Filename of the media being processed",
-                             lambda keyword, task: task.fileName())
-        resolver.addResolver(kFileBaseKeyword, KeywordTooltips[kFileBaseKeyword],
-                             lambda keyword, task: task.filebase())
-        resolver.addResolver(kFileHeadKeyword, KeywordTooltips[kFileHeadKeyword],
-                             lambda keyword, task: task.filehead())
-        resolver.addResolver(kFilePathKeyword, KeywordTooltips[kFilePathKeyword],
-                             lambda keyword, task: task.filepath())
-        resolver.addResolver("{filepadding}", "Source Filename padding for formatting frame indices",
-                             lambda keyword, task: task.filepadding())
-        resolver.addResolver("{fileext}", "Filename extension part of the media being processed",
-                             lambda keyword, task: task.fileext())
-        resolver.addResolver("{clip}", "Name of the clip used in the shot being processed",
-                             lambda keyword, task: task.clipName())
-        resolver.addResolver("{shot}", "Name of the shot being processed",
-                             lambda keyword, task: task.shotName())
-        resolver.addResolver("{track}", "Name of the track being processed",
-                             lambda keyword, task: task.trackName())
-        resolver.addResolver("{sequence}", "Name of the sequence being processed",
-                             lambda keyword, task: task.sequenceName())
-        resolver.addResolver("{event}", "EDL event of the track item being processed",
-                             lambda keyword, task: task.editId())
-        resolver.addResolver("{_nameindex}",
-                             "Index of the shot name in the sequence preceded by an _, for avoiding clashes with "
-                             "shots of the same name",
-                             lambda keyword, task: task.shotNameIndex())
-        resolver.addResolver("{trnla_jobs}", "Tarantula organization job directory",
-                             lambda keyword, task: self.get_org_dir())
+        resolver.addResolver("{filename}", "Filename of the media being processed", lambda keyword, task: task.fileName())
+        resolver.addResolver(kFileBaseKeyword, KeywordTooltips[kFileBaseKeyword], lambda keyword, task: task.filebase())
+        resolver.addResolver(kFileHeadKeyword, KeywordTooltips[kFileHeadKeyword], lambda keyword, task: task.filehead())
+        resolver.addResolver(kFilePathKeyword, KeywordTooltips[kFilePathKeyword], lambda keyword, task: task.filepath())
+        resolver.addResolver("{filepadding}", "Source Filename padding for formatting frame indices", lambda keyword, task: task.filepadding())
+        resolver.addResolver("{fileext}", "Filename extension part of the media being processed", lambda keyword, task: task.fileext())
+        resolver.addResolver("{clip}", "Name of the clip used in the shot being processed", lambda keyword, task: task.clipName())
+        resolver.addResolver("{shot}", "Name of the shot being processed", lambda keyword, task: task.shotName())
+        resolver.addResolver("{track}", "Name of the track being processed", lambda keyword, task: task.trackName())
+        resolver.addResolver("{sequence}", "Name of the sequence being processed", lambda keyword, task: task.sequenceName())
+        resolver.addResolver("{event}", "EDL event of the track item being processed", lambda keyword, task: task.editId())
+        resolver.addResolver("{_nameindex}", "Index of the shot name in the sequence preceded by an _, for avoiding clashes with shots of the same name", lambda keyword, task: task.shotNameIndex())
+        resolver.addResolver("{trnla_jobs}", "Tarantula organization job directory", lambda keyword, task: self.get_org_dir())
         resolver.addResolver("{trnla_project_name}", "Tarantula project to add the shot to.", self.properties()["trnla_project_name"])
 
     # check that all nuke shot exporters have at least one write node

@@ -1,9 +1,9 @@
 # --------------------------Trn.la Plugin For Nuke Studio--------------------------------
 # QDialog for logging into a trnla account.
-#
+# 
+# (c) 2021 Tarantula
 # Author: Moses Molina
-# email:  moses.tarantula@gmail.com
-# --------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------
 
 from PySide2.QtGui import *
 from PySide2.QtCore import *
