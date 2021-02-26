@@ -1,0 +1,285 @@
+<root presetname="TARANTULA SHOT CREATOR" tasktype="trnla.TrnlaShotProcessor.TrnlaShotProcessor">
+    <trnla_api_key valuetype="unicode"></trnla_api_key>
+    <versionIndex valuetype="int">1</versionIndex>
+    <trnla_exist_project valuetype="bool">False</trnla_exist_project>
+    <exportTemplate valuetype="list">
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/in/plate/{version}/{shot}_plate{track}_{version}/{shot}_plate{track}_{version}_####.{ext}</SequenceItem>
+            <SequenceItem valuetype="trnla.TrnlaTranscodeExporter.TrnlaTranscodePreset">
+                <root presetname="trnla.TrnlaTranscodeExporter.TrnlaTranscodeExporter" tasktype="trnla.TrnlaTranscodeExporter.TrnlaTranscodeExporter">
+                    <bitDepth valuetype="str">24 bit</bitDepth>
+                    <colourspace valuetype="str">default</colourspace>
+                    <includeEffects valuetype="bool">True</includeEffects>
+                    <file_type valuetype="unicode">exr</file_type>
+                    <trnla_api_key valuetype="unicode"></trnla_api_key>
+                    <channels valuetype="unicode">rgb</channels>
+                    <includeAudio valuetype="bool">False</includeAudio>
+                    <useSingleSocket valuetype="bool">False</useSingleSocket>
+                    <numChannels valuetype="str">stereo</numChannels>
+                    <trnla_exist_project valuetype="bool">True</trnla_exist_project>
+                    <additionalNodesData valuetype="list" />
+                    <readAllLinesForExport valuetype="bool">False</readAllLinesForExport>
+                    <codec valuetype="str">linear PCM (wav)</codec>
+                    <reformat valuetype="dict">
+                        <filter valuetype="str">Cubic</filter>
+                        <to_type valuetype="str">None</to_type>
+                        <scale valuetype="float">1.0</scale>
+                        <center valuetype="bool">True</center>
+                        <resize valuetype="str">width</resize>
+                    </reformat>
+                    <keepNukeScript valuetype="bool">False</keepNukeScript>
+                    <bitRate valuetype="str">320 kbp/s</bitRate>
+                    <method valuetype="str">Blend</method>
+                    <trnla_project_name valuetype="unicode"></trnla_project_name>
+                    <trnla_project_id valuetype="int">-1</trnla_project_id>
+                    <views valuetype="list">
+                        <SequenceItem valuetype="str">all</SequenceItem>
+                    </views>
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <trnla_new_project valuetype="bool">False</trnla_new_project>
+                    <deleteAudio valuetype="bool">True</deleteAudio>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <dpx valuetype="dict">
+                        <datatype valuetype="str">10 bit</datatype>
+                        <transfer valuetype="str">(auto detect)</transfer>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <fill valuetype="bool">False</fill>
+                    </dpx>
+                    <exr valuetype="dict">
+                        <compression valuetype="str">DWAA</compression>
+                        <datatype valuetype="str">16 bit half</datatype>
+                        <noprefix valuetype="bool">False</noprefix>
+                        <write_full_layer_names valuetype="bool">False</write_full_layer_names>
+                        <standard_layer_name_format valuetype="bool">False</standard_layer_name_format>
+                        <interleave valuetype="str">channels, layers and views</interleave>
+                        <dw_compression_level valuetype="float">45.0</dw_compression_level>
+                        <truncateChannelNames valuetype="bool">False</truncateChannelNames>
+                        <write_ACES_compliant_EXR valuetype="bool">False</write_ACES_compliant_EXR>
+                        <metadata valuetype="str">default metadata</metadata>
+                    </exr>
+                    <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
+                    <sampleRate valuetype="str">44100 Hz</sampleRate>
+                    <trnla_upload valuetype="bool">True</trnla_upload>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/in/plate/{version}/{shot}_preview{track}_{version}/{shot}_preview{track}_{version}_####.{ext}</SequenceItem>
+            <SequenceItem valuetype="trnla.TrnlaPreviewTranscoder.TrnlaPreviewTranscoderPreset">
+                <root presetname="trnla.TrnlaPreviewTranscoder.TrnlaPreviewTranscoder" tasktype="trnla.TrnlaPreviewTranscoder.TrnlaPreviewTranscoder">
+                    <bitDepth valuetype="str">24 bit</bitDepth>
+                    <colourspace valuetype="str">default</colourspace>
+                    <includeEffects valuetype="bool">True</includeEffects>
+                    <file_type valuetype="unicode">mov</file_type>
+                    <channels valuetype="str">rgb</channels>
+                    <includeAudio valuetype="bool">False</includeAudio>
+                    <useSingleSocket valuetype="bool">False</useSingleSocket>
+                    <numChannels valuetype="str">stereo</numChannels>
+                    <additionalNodesData valuetype="list" />
+                    <readAllLinesForExport valuetype="bool">True</readAllLinesForExport>
+                    <codec valuetype="str">linear PCM (wav)</codec>
+                    <reformat valuetype="dict">
+                        <filter valuetype="str">Cubic</filter>
+                        <to_type valuetype="str">None</to_type>
+                        <scale valuetype="float">1.0</scale>
+                        <center valuetype="bool">True</center>
+                        <resize valuetype="str">width</resize>
+                    </reformat>
+                    <keepNukeScript valuetype="bool">False</keepNukeScript>
+                    <bitRate valuetype="str">320 kbp/s</bitRate>
+                    <method valuetype="str">Blend</method>
+                    <views valuetype="list">
+                        <SequenceItem valuetype="str">all</SequenceItem>
+                    </views>
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <mov valuetype="dict">
+                        <mov64_dnxhr_codec_profile valuetype="NoneType">None</mov64_dnxhr_codec_profile>
+                        <mov64_quality_min valuetype="int">1</mov64_quality_min>
+                        <dataRange valuetype="str">Video Range</dataRange>
+                        <mov_h264_codec_profile valuetype="str">High 4:2:0 8-bit</mov_h264_codec_profile>
+                        <mov64_gop_size valuetype="int">12</mov64_gop_size>
+                        <mov_prores_codec_profile valuetype="NoneType">None</mov_prores_codec_profile>
+                        <mov64_b_frames valuetype="int">0</mov64_b_frames>
+                        <mov64_write_timecode valuetype="bool">True</mov64_write_timecode>
+                        <mov64_bitrate_tolerance valuetype="int">0</mov64_bitrate_tolerance>
+                        <mov64_dnxhd_codec_profile valuetype="NoneType">None</mov64_dnxhd_codec_profile>
+                        <mov64_bitrate valuetype="int">28000</mov64_bitrate>
+                        <mov64_pixel_format valuetype="NoneType">None</mov64_pixel_format>
+                        <mov64_limit_bitrate valuetype="NoneType">None</mov64_limit_bitrate>
+                        <mov64_quality valuetype="str">High</mov64_quality>
+                        <mov64_quality_max valuetype="int">3</mov64_quality_max>
+                        <mov64_codec valuetype="str">h264</mov64_codec>
+                        <mov64_fast_start valuetype="bool">True</mov64_fast_start>
+                        <encoder valuetype="str">mov64</encoder>
+                        <mov64_ycbcr_matrix_type valuetype="str">Auto</mov64_ycbcr_matrix_type>
+                    </mov>
+                    <deleteAudio valuetype="bool">True</deleteAudio>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <dpx valuetype="dict">
+                        <datatype valuetype="str">8 bit</datatype>
+                        <transfer valuetype="str">(auto detect)</transfer>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <fill valuetype="bool">False</fill>
+                    </dpx>
+                    <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
+                    <sampleRate valuetype="str">44100 Hz</sampleRate>
+                    <trnla_upload valuetype="bool">True</trnla_upload>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/out/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root presetname="folder" tasktype="hiero.core.FnExporterBase.FolderTask" />
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/work/nuke/in/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root presetname="folder" tasktype="hiero.core.FnExporterBase.FolderTask" />
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/work/nuke/work/{shot}_nuke_{version}.nk</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnNukeShotExporter.NukeShotPreset">
+                <root presetname="hiero.exporters.FnNukeShotExporter.NukeShotExporter" tasktype="hiero.exporters.FnNukeShotExporter.NukeShotExporter">
+                    <postProcessScript valuetype="bool">True</postProcessScript>
+                    <annotationsPreCompPaths valuetype="list" />
+                    <readPaths valuetype="list">
+                        <SequenceItem valuetype="unicode">work/{shot}/in/plate/{version}/{shot}_plate{track}_{version}/{shot}_plate{track}_{version}_####.{ext}</SequenceItem>
+                    </readPaths>
+                    <connectTracks valuetype="bool">False</connectTracks>
+                    <collateSequence valuetype="bool">False</collateSequence>
+                    <additionalNodesData valuetype="list" />
+                    <collateShotNames valuetype="bool">False</collateShotNames>
+                    <includeEffects valuetype="bool">True</includeEffects>
+                    <writePaths valuetype="list">
+                        <SequenceItem valuetype="unicode">work/{shot}/work/nuke/out/{shot}_nuke_{version}/{shot}_nuke_{version}_####.{ext}</SequenceItem>
+                    </writePaths>
+                    <reformat valuetype="dict">
+                        <filter valuetype="str">Cubic</filter>
+                        <to_type valuetype="str">Plate Resolution</to_type>
+                        <center valuetype="bool">True</center>
+                        <resize valuetype="str">width</resize>
+                    </reformat>
+                    <method valuetype="str">Blend</method>
+                    <includeAnnotations valuetype="bool">False</includeAnnotations>
+                    <enable valuetype="bool">True</enable>
+                    <showAnnotations valuetype="bool">True</showAnnotations>
+                    <collateCustomStart valuetype="bool">True</collateCustomStart>
+                    <additionalNodesEnabled valuetype="bool">False</additionalNodesEnabled>
+                    <timelineWriteNode valuetype="unicode">work/{shot}/work/nuke/out/{shot}_nuke_{version}/{shot}_nuke_{version}_####.{ext}</timelineWriteNode>
+                    <collateTracks valuetype="bool">False</collateTracks>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">work/{shot}/work/nuke/out/{shot}_nuke_{version}/{shot}_nuke_{version}_####.{ext}</SequenceItem>
+            <SequenceItem valuetype="hiero.exporters.FnExternalRender.NukeRenderPreset">
+                <root presetname="hiero.exporters.FnExternalRender.NukeRenderTask" tasktype="hiero.exporters.FnExternalRender.NukeRenderTask">
+                    <colourspace valuetype="str">default</colourspace>
+                    <views valuetype="list">
+                        <SequenceItem valuetype="str">all</SequenceItem>
+                    </views>
+                    <file_type valuetype="unicode">exr</file_type>
+                    <create_directories valuetype="bool">True</create_directories>
+                    <channels valuetype="str">all</channels>
+                    <burninDataEnabled valuetype="bool">False</burninDataEnabled>
+                    <dpx valuetype="dict">
+                        <datatype valuetype="str">8 bit</datatype>
+                        <transfer valuetype="str">(auto detect)</transfer>
+                        <bigEndian valuetype="bool">True</bigEndian>
+                        <fill valuetype="bool">False</fill>
+                    </dpx>
+                    <burninData valuetype="dict">
+                        <burnIn_bottomRight valuetype="NoneType">None</burnIn_bottomRight>
+                        <burnIn_topLeft valuetype="NoneType">None</burnIn_topLeft>
+                        <burnIn_topMiddle valuetype="NoneType">None</burnIn_topMiddle>
+                        <burnIn_padding valuetype="NoneType">None</burnIn_padding>
+                        <burnIn_topRight valuetype="NoneType">None</burnIn_topRight>
+                        <burnIn_bottomMiddle valuetype="NoneType">None</burnIn_bottomMiddle>
+                        <burnIn_bottomLeft valuetype="NoneType">None</burnIn_bottomLeft>
+                        <burnIn_textSize valuetype="NoneType">None</burnIn_textSize>
+                        <burnIn_font valuetype="NoneType">None</burnIn_font>
+                    </burninData>
+                    <exr valuetype="dict">
+                        <compression valuetype="str">DWAA</compression>
+                        <datatype valuetype="str">16 bit half</datatype>
+                        <noprefix valuetype="bool">False</noprefix>
+                        <write_full_layer_names valuetype="bool">False</write_full_layer_names>
+                        <standard_layer_name_format valuetype="bool">False</standard_layer_name_format>
+                        <interleave valuetype="str">channels, layers and views</interleave>
+                        <dw_compression_level valuetype="float">45.0</dw_compression_level>
+                        <truncateChannelNames valuetype="bool">False</truncateChannelNames>
+                        <write_ACES_compliant_EXR valuetype="bool">False</write_ACES_compliant_EXR>
+                        <metadata valuetype="str">default metadata</metadata>
+                    </exr>
+                    <writeNodeName valuetype="str">Write_{ext}</writeNodeName>
+                    <reformat valuetype="dict">
+                        <filter valuetype="str">Cubic</filter>
+                        <to_type valuetype="str">None</to_type>
+                        <scale valuetype="float">1.0</scale>
+                        <center valuetype="bool">True</center>
+                        <resize valuetype="str">width</resize>
+                    </reformat>
+                </root>
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">out/editorial/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root presetname="folder" tasktype="hiero.core.FnExporterBase.FolderTask" />
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">in/editorial/asset/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root presetname="folder" tasktype="hiero.core.FnExporterBase.FolderTask" />
+            </SequenceItem>
+        </SequenceItem>
+        <SequenceItem valuetype="tuple">
+            <SequenceItem valuetype="str">in/editorial/work/</SequenceItem>
+            <SequenceItem valuetype="hiero.core.FnExporterBase.FolderTaskPreset">
+                <root presetname="folder" tasktype="hiero.core.FnExporterBase.FolderTask" />
+            </SequenceItem>
+        </SequenceItem>
+    </exportTemplate>
+    <excludeTags valuetype="list" />
+    <versionPadding valuetype="int">2</versionPadding>
+    <includeRetimes valuetype="bool">False</includeRetimes>
+    <startFrameSource valuetype="str">Custom</startFrameSource>
+    <cutLength valuetype="bool">True</cutLength>
+    <trnla_project_name valuetype="unicode"></trnla_project_name>
+    <trnla_project_id valuetype="int">-1</trnla_project_id>
+    <startFrameIndex valuetype="int">1001</startFrameIndex>
+    <exportRoot valuetype="str">{trnla_jobs}</exportRoot>
+    <trnla_new_project valuetype="bool">True</trnla_new_project>
+    <includeTags valuetype="list" />
+    <trnla_project_names valuetype="list"></trnla_project_names>
+    <cutUseHandles valuetype="bool">True</cutUseHandles>
+    <trnla_project_ids valuetype="list"></trnla_project_ids>
+    <trnla_upload valuetype="bool">True</trnla_upload>
+    <cutHandles valuetype="int">10</cutHandles>
+</root>

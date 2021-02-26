@@ -5,7 +5,8 @@ A plugin for Nuke Studio that allows for uploading sequence exports to trn.la.
 Current only tested on Windows 10.
 
 ## Installation
-Copy __*"trnla/"*__ and __*"trnla_init.py"*__ into your .nuke/Python/Startup folder.
+- Copy __*"trnla/"*__ and __*"trnla_init.py"*__ into your .nuke/Python/Startup folder.
+- Copy __*"trnla.TrnlaShotProcessor.TrnlaShotProcessor/"*__ into your .nuke/TaskPresets/{NukeVersionNumber}/Processors folder, where '{NukeVersionNumber}' is your nuke's version number (i.e. 12.2)
 
 ## Features
 - Login to trn.la
