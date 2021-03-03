@@ -1,6 +1,7 @@
+# Nuke Studio trn.la Plugin
+
 ![nukeStudio tarantula_uploader](https://user-images.githubusercontent.com/29791242/109760020-d990dc80-7ba2-11eb-9443-09de5e6ced31.png)
 
-# Nuke Studio trn.la Plugin
 A plugin for Nuke Studio that allows for uploading sequence exports to trn.la.
 
 ## OS Support
