@@ -281,7 +281,7 @@ class TrnlaShotProcessorUI(ShotProcessorUI):
         self.uploadFull.hide()
 
     def requestProjects(self):
-        self.location = 'https://dev.trn.la/api/producer/projects'
+        self.location = 'https://trn.la/api/producer/projects'
         self.url = QUrl(self.location)
         self.data = QByteArray()
         self.request = QNetworkRequest(self.url)
@@ -385,7 +385,7 @@ class TrnlaShotProcessor(FnShotProcessor.ShotProcessor):
         # Get Sequence Info
         project_info = self.getSeqInfo(self.trnlaExportItems) + (self.getColorSpace(),)
 
-        self.location = 'https://dev.trn.la/api/producer/store_project'
+        self.location = 'https://trn.la/api/producer/store_project'
         self.url = QUrl(self.location)
         self.data = QByteArray()
         self.nam = QNetworkAccessManager()
