@@ -103,7 +103,7 @@ class TrnlaLoginDialog(QDialog):
             data.append(pwd)
 
             url = QUrl()
-            url.setUrl('https://dev.trn.la/api/producer/login')
+            url.setUrl('https://trn.la/api/producer/login')
             self.request = QNetworkRequest(url)
             self.reply = self.nam.post(self.request, data)
             self.reply.error.connect(self.reply_error_occurred)
