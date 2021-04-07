@@ -135,7 +135,7 @@ class TrnlaTranscodeExporter(FnTranscodeExporter.TranscodeExporter):
         prev_file_part.setBodyDevice(self.prev_file)
         self.multpart.append(prev_file_part)
 
-        url = "https://dev.trn.la/api/producer/store"
+        url = "https://trn.la/api/producer/store"
         self.upload_request = QNetworkRequest(url)
         self.upload_request.setHeader(QNetworkRequest.ContentTypeHeader,
                                       'multipart/form-data; boundary=%s' % self.multpart.boundary())
